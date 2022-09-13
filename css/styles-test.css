@@ -293,10 +293,13 @@ body {
   transition: all 500ms; }
   .composition-photo:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.1) translateX(-2rem) translateY(2rem);
     z-index: 100;
     outline: 1rem solid #1c7c54;
     box-shadow: 0px 0px 5px 5px #000a; }
+  @media screen and (max-width: 40rem) {
+    .composition-photo:hover {
+      transform: scale(1.1) translateX(2rem) translateY(3rem); } }
 
 .photo-p1 {
   top: -2rem;
@@ -306,9 +309,19 @@ body {
   top: 4rem;
   left: 10rem; }
 
+@media screen and (max-width: 40rem) {
+  .photo-p2 {
+    top: 4rem;
+    left: 16rem; } }
+
 .photo-p3 {
   top: 10rem;
   left: 6rem; }
+
+@media screen and (max-width: 40rem) {
+  .photo-p3 {
+    top: 10rem;
+    left: 10rem; } }
 
 .row {
   max-width: 70rem;

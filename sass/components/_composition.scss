@@ -18,11 +18,17 @@
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.1);
+      transform: scale(1.1) translateX(-2rem) translateY(2rem);
       z-index: 100;
       outline: 1rem solid $E-bg-primary-mid;
 
       @include boxshadowLarge(#000a);
+    }
+
+    @media screen and (max-width: 40rem) {
+      &:hover {
+        transform: scale(1.1) translateX(2rem) translateY(3rem);
+      }
     }
   }
 }
@@ -38,8 +44,22 @@
     left: 10rem;
   }
 
+  @media screen and (max-width: 40rem) {
+    &-p2 {
+      top: 4rem;
+      left: 16rem;
+    }
+  }
+
   &-p3 {
     top: 10rem;
     left: 6rem;
+  }
+
+  @media screen and (max-width: 40rem) {
+    &-p3 {
+      top: 10rem;
+      left: 10rem;
+    }
   }
 }
