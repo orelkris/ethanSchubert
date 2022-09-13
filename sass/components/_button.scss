@@ -1,0 +1,64 @@
+// BUTTON
+.btn {
+  @include mainLink0();
+
+  &:link,
+  &:visited {
+    @include mainLink0();
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    @include boxshadow(#0006);
+
+    &::after {
+      background-color: $color-primary-text;
+      border: 1px solid $color-text-light;
+      transform: scaleX(1.2) scaleY(1.5);
+      opacity: 0;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+
+    transition: all 800ms;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+.contact {
+  &:link {
+    @include mainLink1();
+    background-color: $E-bg-primary-mid;
+    @include boxshadow(#0007);
+  }
+
+  &:visited {
+    @include mainLink1();
+    background-color: $E-bg-primary-mid;
+  }
+
+  &:hover {
+    background: darken($E-bg-primary-mid, 20%);
+    transform: translateY(-2px);
+    @include boxshadow(#000a);
+  }
+
+  &:active {
+    transform: translateY(5px);
+  }
+}

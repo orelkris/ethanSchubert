@@ -1,0 +1,45 @@
+.about--image-composition {
+  &:hover .composition-photo:not(:hover) {
+    transform: scale(0.9);
+  }
+}
+
+.composition {
+  &-photo {
+    width: 55%;
+    object-fit: contain;
+    @include boxshadow(#000d);
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline-offset: 0.5rem;
+
+    transition: all 500ms;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      z-index: 100;
+      outline: 1rem solid $E-bg-primary-mid;
+
+      @include boxshadowLarge(#000a);
+    }
+  }
+}
+
+.photo {
+  &-p1 {
+    top: -2rem;
+    left: 0rem;
+  }
+
+  &-p2 {
+    top: 4rem;
+    left: 10rem;
+  }
+
+  &-p3 {
+    top: 10rem;
+    left: 6rem;
+  }
+}

@@ -1,0 +1,61 @@
+@font-face {
+  font-family: FancyLetter;
+  src: url('../fonts/Beyond Wonderland.ttf');
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $color-text-dark;
+}
+
+.header {
+  &--primary-title {
+    font-family: 'Montez', sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: $color-primary-text;
+    letter-spacing: 1.2rem;
+    text-transform: uppercase;
+
+    %fancyLetter {
+      font-family: FancyLetter;
+      font-size: 250%;
+      color: $color-secondary-text;
+    }
+
+    .fancy-letter {
+      @extend %fancyLetter;
+    }
+  }
+}
+
+.about {
+  &--heading {
+    font-size: 3rem;
+    font-family: 'Combo', sans-serif;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    // h2 is a block element and we want this background to only span the heading content
+    display: inline-block;
+    color: #3f3b2f;
+
+    transition: all 1s;
+
+    &:hover {
+      transform: skewY(5deg) scale(1.1);
+      text-shadow: 1rem 1rem 1rem rgb(94, 94, 94);
+    }
+  }
+
+  &--heading-sub {
+    text-transform: uppercase;
+
+    &:not(last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

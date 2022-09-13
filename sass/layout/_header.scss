@@ -1,0 +1,54 @@
+/* HEADER */
+.header {
+  &--container {
+    @include flexRowCenter();
+
+    padding: 0.5rem;
+    height: 100%;
+    background: linear-gradient(
+        240deg,
+        $color-primary-dark-fade,
+        $color-secondary-dark-fade
+      ),
+      url(../img/audio-header.jpg) center/cover no-repeat;
+
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 1);
+      z-index: -1;
+      top: 0;
+
+      animation: fadeToBlack 5s 200ms forwards;
+    }
+  }
+
+  &--content-container {
+    text-align: center;
+    width: 100%;
+
+    @include flexColCenter();
+  }
+
+  &--primary-title {
+    margin-bottom: 5rem;
+    width: 100%;
+
+    display: block;
+    opacity: 0;
+
+    animation: slideDown 1.5s 200ms ease forwards;
+
+    /* to avoid any shake during the animation. */
+    backface-visibility: hidden;
+  }
+
+  &--primary-btn {
+    animation: slideUp 1.5s 200ms ease, fadeIn 1.5s 200ms ease-out forwards;
+  }
+}

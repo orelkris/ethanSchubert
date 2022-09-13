@@ -1,0 +1,8 @@
+.about--container {
+  background: url(../img/about-bg-pale.jpg) center/cover no-repeat;
+
+  background-color: $color-primary-light-fade;
+  background-blend-mode: overlay;
+  padding: 10rem 0rem 10rem 2rem;
+  margin-top: -15vh;
+}

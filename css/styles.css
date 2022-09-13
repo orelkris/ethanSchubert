@@ -1,0 +1,288 @@
+/* Basic Reset */
+/* #EDEEC0 */
+/* #1c7c54 */
+/* #162521 */
+
+/* RESET */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+/*  */
+@media screen and (max-width: 48em) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #828282;
+  height: 100vh;
+  padding: 0.5rem;
+
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn:link,
+.btn:visited {
+  background-color: #0006;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  display: inline-block;
+  border: 1px solid #fff4;
+  border-radius: 1rem;
+  width: 20rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  opacity: 0;
+
+  transition: all 250ms;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px #0006;
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+
+  transition: all 800ms;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  background-color: goldenrod;
+  border: 1px solid #fff;
+  transform: scaleX(1.2) scaleY(1.5);
+  opacity: 0;
+}
+
+/* HEADER */
+.header--container {
+  padding: 0.5rem;
+  height: 100%;
+  background: linear-gradient(240deg, #093121d3, #162521dd),
+    url(../img/audio-header.jpg) center/cover no-repeat;
+
+  clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+}
+
+.header--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header--container::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: -1;
+  top: 0;
+
+  animation: fadeToBlack 5s 200ms forwards;
+}
+
+.header--content-container {
+  text-align: center;
+  /* position: absolute; */
+
+  /* these percentages are in relation to the parent element */
+  /* top: 48%;
+  left: 50%; */
+
+  width: 100%;
+
+  /* the -50% is in relation to itself not the parent container. This is in essence like changing origin of the center of this element. */
+  /* transform: translate(-50%, -50%); */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header--primary-title {
+  font-family: 'Montez', sans-serif;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.2;
+
+  color: rgba(224, 155, 26, 0.8);
+  letter-spacing: 1.2rem;
+
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  width: 100%;
+
+  display: block;
+  opacity: 0;
+
+  animation: slideDown 1.5s 200ms ease forwards;
+
+  /* to avoid any shake during the animation. */
+  backface-visibility: hidden;
+}
+
+@font-face {
+  font-family: FancyLetter;
+  src: url('../fonts/Beyond\ Wonderland.ttf');
+}
+
+.header--primary-title::first-letter,
+.fancy-letter {
+  font-family: FancyLetter;
+  font-size: 250%;
+  color: goldenrod;
+}
+
+.header--primary-btn {
+  animation: slideUp 1.5s 200ms ease, fadeIn 1.5s 200ms ease-out forwards;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+
+    /* backwards/negative in the X direction */
+    transform: translateX(-150px);
+  }
+
+  10% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+
+  70% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+
+  10% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+
+  70% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeToBlack {
+  0% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+
+  10% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+
+  70% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+
+  10% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+
+  70% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
